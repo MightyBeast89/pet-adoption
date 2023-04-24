@@ -1,33 +1,16 @@
-import { AiOutlineMenu, AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineMenu } from 'react-icons/ai';
+import DropDown from './DropDown';
 import { useStore } from '../../../store';
 const UserMenu = () => {
   const store = useStore();
 
   return (
-    <div className='flex gap-4 rounded-full p-2'>
-      <div className='dropdown dropdown-hover  dropdown-left'>
-        <AiOutlineUser
-          tabIndex='0'
-          size={20}
-          className='cursor-pointer hover:text-gray-500'
-        />
-
-        <ul
-          tabIndex='0'
-          className='p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52'
-        >
-          <li>
-            <a>Log in</a>
-          </li>
-          <li>
-            <a>Sign up</a>
-          </li>
-        </ul>
-      </div>
+    <div className='flex gap-4 rounded-full pr-2'>
+      <DropDown />
 
       <AiOutlineMenu
         size={20}
-        className='cursor-pointer hover:text-gray-500'
+        className='cursor-pointer block md:hidden text-primary-focus hover:text-primary'
         onClick={() => store.onOpen()}
       />
     </div>

@@ -2,11 +2,14 @@ import { motion } from 'framer-motion';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useStore } from '../../../store';
 import MenuItem from './MenuItem';
+
+const items = ['About us', 'Find pet', `FAQ's`, 'Shelter'];
+
 const Drawer = () => {
   const store = useStore();
-  const items = ['About us', 'Find pet', `FAQ's`, 'Shelter'];
+
   return (
-    <div className='absolute flex justify-end inset-0 transition bg-black/50'>
+    <div className='absolute flex justify-end inset-0 transition bg-black/50 z-20'>
       <motion.div
         initial={{
           x: 30,
@@ -17,7 +20,7 @@ const Drawer = () => {
         exit={{
           x: 30,
         }}
-        className='bg-white w-2/4 md:w-1/4 h-full p-6 '
+        className='bg-base-100 w-full md:w-1/4 h-screen px-4 py-8'
       >
         <div className='flex justify-end'>
           <AiOutlineClose
@@ -27,10 +30,21 @@ const Drawer = () => {
           />
         </div>
 
-        <ul className='flex flex-col justify-center items-center mt-24 gap-4'>
-          {items.map(item => (
-            <MenuItem key={item} item={item} />
-          ))}
+        <ul className='flex flex-col justify-center px-2 mt-12 gap-4'>
+          <div className='flex flex-col gap-4'>
+            {items.map(item => (
+              <MenuItem key={item} item={item} />
+            ))}
+          </div>
+          <hr />
+          <div className='flex flex-col gap-3 mt-5'>
+            <button className='px-4 py-2 rounded-full bg-neutral-200'>
+              Log in
+            </button>
+            <button className='bg-primary text-white px-4 py-2 rounded-full'>
+              Sign up
+            </button>
+          </div>
         </ul>
       </motion.div>
     </div>
