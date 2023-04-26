@@ -7,6 +7,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
+import authRoutes from "./routes/auth.js";
 
 //CONFIGURATIONS
 //const __filename = fileURLToPath(import.meta.url); //to grab the file url particulary when using the module
@@ -33,3 +34,6 @@ mongoose
     app.listen(PORT, () => console.log(`Server Running on Port: ${PORT}`));
   })
   .catch((error) => console.log(`${error} failed to connect`));
+
+//Routes
+app.use("/auth", authRoutes);

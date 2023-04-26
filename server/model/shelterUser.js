@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const shelterUserSchema = new mongoose.Schema(
   {
@@ -32,8 +32,8 @@ const shelterUserSchema = new mongoose.Schema(
       required: true,
     },
     shelterPets: {
-      type: Array,
-      default: [],
+      type: Schema.Types.ObjectId,
+      ref: "pets",
     },
   },
   { timestamp: true }
