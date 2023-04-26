@@ -29,7 +29,7 @@ const petOwnerSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    Age: {
+    age: {
       type: Number,
       required: true,
     },
