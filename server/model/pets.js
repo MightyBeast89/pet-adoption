@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import shelterUser from "./shelterUser";
 
-const petSchema = mongoose.Schema(
+const petSchema = new mongoose.Schema(
   {
     shelterId: {
       type: Schema.Types.ObjectId,

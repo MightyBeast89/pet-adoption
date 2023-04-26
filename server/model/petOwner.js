@@ -49,9 +49,17 @@ const petOwnerSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    favorites: {
+      type: Array,
+      default: [],
+    },
+    surveyId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "survey",
+    },
   },
   { timestamps: true }
 );
 
-const petOwnerUser = mongoose.model("PetOwner", petOwnerSchema);
-export default petOwnerUser;
+const petOwner = mongoose.model("PetOwner", petOwnerSchema);
+export default petOwner;
