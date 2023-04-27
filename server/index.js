@@ -8,6 +8,7 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
+import petRoutes from "./routes/pet.js";
 
 //CONFIGURATIONS
 //const __filename = fileURLToPath(import.meta.url); //to grab the file url particulary when using the module
@@ -37,3 +38,4 @@ mongoose
 
 //Routes
 app.use("/auth", authRoutes);
+app.use("/pets", petRoutes);

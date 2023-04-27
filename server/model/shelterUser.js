@@ -31,10 +31,12 @@ const shelterUserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    shelterPets: {
-      type: Schema.Types.ObjectId,
-      ref: "pets",
-    },
+    shelterPets: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "pets",
+      },
+    ],
   },
   { timestamp: true }
 );

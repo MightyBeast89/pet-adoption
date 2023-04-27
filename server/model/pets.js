@@ -1,5 +1,4 @@
 import mongoose, { Schema } from "mongoose";
-import shelterUser from "./shelterUser";
 
 const petSchema = new mongoose.Schema(
   {
@@ -35,7 +34,7 @@ const petSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    petOusideHours: {
+    petOutsideHours: {
       type: String,
       required: true,
     },
