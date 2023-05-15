@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
+import clsx from 'clsx';
 
-const Heading = () => {
+const Header = ({ center }) => {
   return (
-    <div className='sm:p-8 flex flex-col justify-center sm:w-1/2'>
+    <div className="sm:p-8 flex flex-col justify-center sm:w-1/2">
       <motion.h1
         initial={{
           opacity: 0,
@@ -15,10 +16,11 @@ const Heading = () => {
           opacity: 1,
           x: 0,
         }}
-        className='text-3xl sm:text-4xl lg:text-6xl font-bold'
+        className={clsx('text-5xl sm:text-4xl lg:text-6xl font-extrabold')}
       >
-        Adopt me!
+        You&apos;re getting a loyal companion
       </motion.h1>
+
       <motion.p
         initial={{
           opacity: 0,
@@ -31,10 +33,13 @@ const Heading = () => {
           opacity: 1,
           x: 0,
         }}
-        className='text-xs sm:text-sm md:text-md font-medium tracking-tighter'
+        className="mt-4 text-neutral-500"
       >
-        Adopt a furry friend, give them a second chance at life!
+        Pets are known for their loyalty and devotion to their owners. They
+        offer unconditional love and companionship that can improve your mental
+        and physical health
       </motion.p>
+
       <motion.button
         initial={{
           opacity: 0,
@@ -48,7 +53,7 @@ const Heading = () => {
           opacity: 1,
           y: 0,
         }}
-        className='self-start bg-primary px-4 py-2 rounded-md text-white mt-4 text-xs'
+        className="bg-primary w-[200px] font-bold px-4 py-2 rounded-md text-white mt-6 text-sm md:text-md"
       >
         Adopt Now
       </motion.button>
@@ -56,4 +61,4 @@ const Heading = () => {
   );
 };
 
-export default Heading;
+export default Header;
